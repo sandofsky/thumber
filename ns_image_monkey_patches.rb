@@ -11,19 +11,18 @@ class NSImage
 
   def writeJPEG(filename)
     bits = NSBitmapImageRep.alloc.initWithData(self.TIFFRepresentation)
-    data = bits.representationUsingType_properties(NSJPEGFileType, nil)
-    data.writeToFile_atomically(filename, false)
+    data = bits.representationUsingType(NSJPEGFileType, :properties => nil)
+    data.writeToFile filename, :atomically => false
   end
 
   def copyAndScale(factor)
     newWidth, newHeight = size.width*factor, size.height*factor
     newImage = NSImage.alloc.initWithSize [newWidth, newHeight]
     newImage.lockFocus
-    drawInRect_fromRect_operation_fraction(
-      [0, 0, newWidth, newHeight],
-      [0, 0, size.width, size.height],
-      NSCompositeSourceOver,
-      1.0)
+    drawInRect [0, 0, newWidth, newHeight],
+      :fromRect => [0, 0, size.width, size.height],
+      :operation => NSCompositeSourceOver,
+      :fraction => 1.0
     newImage.unlockFocus
     newImage
   end
@@ -32,11 +31,8 @@ class NSImage
     newWidth, newHeight = x, y
     newImage = NSImage.alloc.initWithSize [newWidth, newHeight]
     newImage.lockFocus
-    drawInRect_fromRect_operation_fraction(
-      [0, 0, newWidth, newHeight],
-      [0, 0, size.width, size.height],
-      NSCompositeSourceOver,
-      1.0)
+    drawInRect [0, 0, newWidth, newHeight], :fromRect => [0, 0, size.width, size.height],
+    :operation => NSCompositeSourceOver, :fraction => 1.0
     newImage.unlockFocus
     newImage
   end

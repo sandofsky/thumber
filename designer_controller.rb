@@ -92,38 +92,37 @@ class DesignerController
   end
 	
 	def process(sender)
-	@go_button.setEnabled(false)
-	@go_button.displayIfNeeded
-		raise unless @output_file.stringValue && @source_file.stringValue
-		raise if @source_file.stringValue == @output_file.stringValue
+    @go_button.setEnabled(false)
+    @go_button.displayIfNeeded
+    raise unless @output_file.stringValue && @source_file.stringValue
+    raise if @source_file.stringValue == @output_file.stringValue
     @output = NSImage.alloc.initWithSize([finalX, finalY])
     @output.lockFocus
     NSColor.blackColor.set
     NSRectFill([0,0, finalX, finalY])
     #full_sized_rect = [0, 0, @movie.currentFrameImage.size.width, @movie.currentFrameImage.size.height]
-	full_sized_rect = [0, 0, thumb_x_size, thumb_x_size]
-    ::Profiler__::start_profile if PROFILE
-    (0..@movie.duration.timeValue).step(timescale * interval) do |current_frame|
+    full_sized_rect = [0, 0, thumb_x_size, thumb_x_size]
+    final_time = @movie.duration.timeValue
+    time_scale = @movie.duration.timeScale
+    (0..final_time).step(time_scale * self.interval) do |current_frame|
       @progress.incrementBy(increment_value)
       @progress.displayIfNeeded
-      i = current_frame / timescale
+      i = current_frame / time_scale
       column = (i / interval).to_i % columns
       row = (i / interval).to_i / columns
       x = column * thumb_x_size
       y = finalY - ((row + 1) * thumb_y_size)
-	  point = NSPoint.new(x,y)
-#	  operation = THImageProcessor.alloc.initWithFrameCount_scale_width_height_point_movie(current_frame, @timescale, thumb_x_size, thumb_y_size, point, @movie)
-	  operation.main
+      point = NSPoint.new(x,y)
+#     operation = THImageProcessor.alloc.initWithFrameCount_scale_width_height_point_movie(current_frame, @timescale, thumb_x_size, thumb_y_size, point, @movie)
+#     operation.main
     end
-    ::Profiler__::stop_profile if PROFILE
-    ::Profiler__::print_profile($stderr) if PROFILE
     @output.unlockFocus
     @output.writeJPEG(@output_file.stringValue)
     @progress.setDoubleValue(0.00)
-	@go_button.setEnabled(true)
+    @go_button.setEnabled(true)
 	end
   
-  	COLUMNS = 60
+ 	COLUMNS = 60
 	DEFAULT_X = 32
 	
 	def pickSource(sender)
@@ -151,10 +150,7 @@ class DesignerController
   
   def populateSettings!
     puts @movie.inspect
-    duration = @movie.duration
-    puts duration.inspect
-    timeScale = duration.timeScale
-    puts timeScale.inspect
+    timeScale = @movie.duration.timeScale
     # Pull the first image
     time = QTTime.new(0, timeScale.to_i, 0)
     frame = @movie.frameImageAtTime(time)
