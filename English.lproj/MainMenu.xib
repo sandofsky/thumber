@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.02">
 	<data>
-		<int key="IBDocument.SystemTarget">0</int>
+		<int key="IBDocument.SystemTarget">1050</int>
 		<string key="IBDocument.SystemVersion">9G55</string>
 		<string key="IBDocument.InterfaceBuilderVersion">670</string>
 		<string key="IBDocument.AppKitVersion">949.43</string>
@@ -502,7 +502,7 @@
 										<object class="NSTextField" id="463765615">
 											<reference key="NSNextResponder" ref="495541033"/>
 											<int key="NSvFlags">268</int>
-											<string key="NSFrame">{{63, 77}, {103, 17}}</string>
+											<string key="NSFrame">{{63, 77}, {95, 17}}</string>
 											<reference key="NSSuperview" ref="495541033"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="638914629">
@@ -743,7 +743,7 @@
 										<object class="NSTextField" id="103014212">
 											<reference key="NSNextResponder" ref="495541033"/>
 											<int key="NSvFlags">268</int>
-											<string key="NSFrame">{{206, 13}, {19, 17}}</string>
+											<string key="NSFrame">{{206, 13}, {17, 17}}</string>
 											<reference key="NSSuperview" ref="495541033"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="19816314">
@@ -792,10 +792,7 @@
 				<string key="NSScreenRect">{{0, 0}, {2560, 1578}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
 			</object>
-			<object class="NSCustomObject" id="586890814">
-				<string key="NSClassName">OutputImage</string>
-			</object>
-			<object class="NSCustomObject" id="184817745">
+			<object class="NSCustomObject" id="651043136">
 				<string key="NSClassName">DesignerController</string>
 			</object>
 		</object>
@@ -884,187 +881,115 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">process:</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="411203522"/>
+						<string key="label">pickSource:</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="774392488"/>
 					</object>
-					<int key="connectionID">386</int>
+					<int key="connectionID">471</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">output_file</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="94343598"/>
+					<object class="IBActionConnection" key="connection">
+						<string key="label">pickDestination:</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="475755838"/>
 					</object>
-					<int key="connectionID">387</int>
+					<int key="connectionID">472</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">source_file</string>
-						<reference key="source" ref="586890814"/>
+						<reference key="source" ref="651043136"/>
 						<reference key="destination" ref="872334014"/>
 					</object>
-					<int key="connectionID">388</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">pickSource:</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="774392488"/>
-					</object>
-					<int key="connectionID">394</int>
+					<int key="connectionID">473</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">go_button</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="411203522"/>
+						<string key="label">output_file</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="94343598"/>
 					</object>
-					<int key="connectionID">395</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">progress</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="67555016"/>
-					</object>
-					<int key="connectionID">397</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">thumb_size_control</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="261192471"/>
-					</object>
-					<int key="connectionID">410</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">column_control</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="45240961"/>
-					</object>
-					<int key="connectionID">411</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">interval_control</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="494973514"/>
-					</object>
-					<int key="connectionID">412</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">pickDestination:</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="475755838"/>
-					</object>
-					<int key="connectionID">425</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">output_file_button</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="475755838"/>
-					</object>
-					<int key="connectionID">426</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">pickSource:</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="722745758"/>
-					</object>
-					<int key="connectionID">434</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">pickDestination:</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="117038363"/>
-					</object>
-					<int key="connectionID">435</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">process:</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="286595005"/>
-					</object>
-					<int key="connectionID">438</int>
+					<int key="connectionID">475</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">thumb_y_size_control</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="153718319"/>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="261192471"/>
 					</object>
-					<int key="connectionID">450</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">row_control</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="473994476"/>
-					</object>
-					<int key="connectionID">451</int>
+					<int key="connectionID">476</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">maintain_square_control</string>
-						<reference key="source" ref="586890814"/>
+						<reference key="source" ref="651043136"/>
 						<reference key="destination" ref="787410602"/>
 					</object>
-					<int key="connectionID">454</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">recalculateSettings:</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="787410602"/>
-					</object>
-					<int key="connectionID">456</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">recalculateSettings:</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="261192471"/>
-					</object>
-					<int key="connectionID">457</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">recalculateSettings:</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="45240961"/>
-					</object>
-					<int key="connectionID">458</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">recalculateSettings:</string>
-						<reference key="source" ref="586890814"/>
-						<reference key="destination" ref="494973514"/>
-					</object>
-					<int key="connectionID">459</int>
+					<int key="connectionID">481</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">finalXControl</string>
-						<reference key="source" ref="586890814"/>
+						<reference key="source" ref="651043136"/>
 						<reference key="destination" ref="838626019"/>
 					</object>
-					<int key="connectionID">468</int>
+					<int key="connectionID">482</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">finalYControl</string>
-						<reference key="source" ref="586890814"/>
+						<reference key="source" ref="651043136"/>
 						<reference key="destination" ref="444401306"/>
 					</object>
-					<int key="connectionID">469</int>
+					<int key="connectionID">483</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">column_control</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="153718319"/>
+					</object>
+					<int key="connectionID">484</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">row_control</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="473994476"/>
+					</object>
+					<int key="connectionID">485</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">progress</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="67555016"/>
+					</object>
+					<int key="connectionID">486</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">interval_control</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="494973514"/>
+					</object>
+					<int key="connectionID">487</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">go_button</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="411203522"/>
+					</object>
+					<int key="connectionID">488</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">process:</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="411203522"/>
+					</object>
+					<int key="connectionID">489</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1392,11 +1317,6 @@
 						<reference key="parent" ref="411203522"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">383</int>
-						<reference key="object" ref="586890814"/>
-						<reference key="parent" ref="1049"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">389</int>
 						<reference key="object" ref="774392488"/>
 						<object class="NSMutableArray" key="children">
@@ -1674,7 +1594,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">470</int>
-						<reference key="object" ref="184817745"/>
+						<reference key="object" ref="651043136"/>
 						<reference key="parent" ref="1049"/>
 					</object>
 				</object>
@@ -1749,7 +1669,6 @@
 					<string>380.IBPluginDependency</string>
 					<string>381.IBPluginDependency</string>
 					<string>382.IBPluginDependency</string>
-					<string>383.IBPluginDependency</string>
 					<string>389.IBPluginDependency</string>
 					<string>390.IBPluginDependency</string>
 					<string>396.IBPluginDependency</string>
@@ -1867,12 +1786,11 @@
 					<reference ref="9"/>
 					<string>{74, 862}</string>
 					<string>{{741, 1370}, {266, 20}}</string>
-					<string>{{460, 908}, {390, 248}}</string>
+					<string>{{212, 900}, {390, 248}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{460, 908}, {390, 248}}</string>
+					<string>{{212, 900}, {390, 248}}</string>
 					<reference ref="9"/>
 					<string>{{1191, 909}, {634, 153}}</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1962,7 +1880,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">470</int>
+			<int key="maxID">489</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1970,13 +1888,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DesignerController</string>
 					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">designer_controller.rb</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">OutputImage</string>
 					<object class="NSMutableDictionary" key="actions">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
@@ -1984,17 +1895,58 @@
 							<string>pickDestination:</string>
 							<string>pickSource:</string>
 							<string>process:</string>
+							<string>recalculateSettings:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSMutableArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>column_control</string>
+							<string>finalXControl</string>
+							<string>finalYControl</string>
+							<string>go_button</string>
+							<string>interval_control</string>
+							<string>maintain_square_control</string>
+							<string>movie_view</string>
+							<string>output_file</string>
+							<string>output_file_button</string>
+							<string>progress</string>
+							<string>row_control</string>
+							<string>source_file</string>
+							<string>thumb_size_control</string>
+							<string>thumb_y_size_control</string>
+							<string>window</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">designer_controller.rb</string>
 					</object>
 				</object>
 			</object>

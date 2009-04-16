@@ -6,23 +6,23 @@
 #  Copyright (c) 2009 Ben Sandofsky. All rights reserved.
 #
 
-require 'osx/cocoa'
-
+# Credit goes to: http://www.rubycocoa.com/cocoa-magic-for-gruff-graphs/2/
 class NSImage
+
   def writeJPEG(filename)
-    bits = OSX::NSBitmapImageRep.alloc.initWithData(self.TIFFRepresentation)
-    data = bits.representationUsingType_properties(OSX::NSJPEGFileType, nil)
+    bits = NSBitmapImageRep.alloc.initWithData(self.TIFFRepresentation)
+    data = bits.representationUsingType_properties(NSJPEGFileType, nil)
     data.writeToFile_atomically(filename, false)
   end
 
   def copyAndScale(factor)
     newWidth, newHeight = size.width*factor, size.height*factor
-    newImage = OSX::NSImage.alloc.initWithSize [newWidth, newHeight]
+    newImage = NSImage.alloc.initWithSize [newWidth, newHeight]
     newImage.lockFocus
     drawInRect_fromRect_operation_fraction(
       [0, 0, newWidth, newHeight],
       [0, 0, size.width, size.height],
-      OSX::NSCompositeSourceOver,
+      NSCompositeSourceOver,
       1.0)
     newImage.unlockFocus
     newImage
@@ -30,12 +30,12 @@ class NSImage
   
   def resizeTo(x, y)
     newWidth, newHeight = x, y
-    newImage = OSX::NSImage.alloc.initWithSize [newWidth, newHeight]
+    newImage = NSImage.alloc.initWithSize [newWidth, newHeight]
     newImage.lockFocus
     drawInRect_fromRect_operation_fraction(
       [0, 0, newWidth, newHeight],
       [0, 0, size.width, size.height],
-      OSX::NSCompositeSourceOver,
+      NSCompositeSourceOver,
       1.0)
     newImage.unlockFocus
     newImage

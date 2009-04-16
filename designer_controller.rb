@@ -65,7 +65,7 @@ class DesignerController
   
   def update_y_control_size!
     @thumb_size_control.setIntValue 1 if @thumb_size_control.intValue == 0
-    y = if @maintain_square_control.state == OSX::NSOnState
+    y = if @maintain_square_control.state == NSOnState
       @thumb_size_control.intValue
     else
       @thumb_size_control.intValue / @ratio
@@ -73,28 +73,28 @@ class DesignerController
     @thumb_y_size_control.setIntValue(y)
   end
   
-  def pickDestination
-    panel = OSX::NSSavePanel.savePanel
+  def pickDestination(sender)
+    panel = NSSavePanel.savePanel
     panel.setAllowedFileTypes(['jpg', 'jpeg', 'tif', 'tiff'])
     panel.setAllowsOtherFileTypes(true)
     panel.setCanSelectHiddenExtension(true)
     dir = @output_file.stringValue.split('/')
     file = dir.pop
     clicked = panel.runModalForDirectory_file(dir.join('/'), file)
-    if clicked == OSX::NSOKButton
+    if clicked == NSOKButton
       @output_file.setStringValue panel.filename
     end
   end
 	
-	def process
+	def process(sender)
 	@go_button.setEnabled(false)
 	@go_button.displayIfNeeded
 		raise unless @output_file.stringValue && @source_file.stringValue
 		raise if @source_file.stringValue == @output_file.stringValue
-    @output = OSX::NSImage.alloc.initWithSize([finalX, finalY])
+    @output = NSImage.alloc.initWithSize([finalX, finalY])
     @output.lockFocus
-    OSX::NSColor.blackColor.set
-    OSX::NSRectFill([0,0, finalX, finalY])
+    NSColor.blackColor.set
+    NSRectFill([0,0, finalX, finalY])
     #full_sized_rect = [0, 0, @movie.currentFrameImage.size.width, @movie.currentFrameImage.size.height]
 	full_sized_rect = [0, 0, thumb_x_size, thumb_x_size]
     ::Profiler__::start_profile if PROFILE
@@ -106,8 +106,8 @@ class DesignerController
       row = (i / interval).to_i / columns
       x = column * thumb_x_size
       y = finalY - ((row + 1) * thumb_y_size)
-	  point = OSX::NSPoint.new(x,y)
-	  operation = OSX::THImageProcessor.alloc.initWithFrameCount_scale_width_height_point_movie(current_frame, @timescale, thumb_x_size, thumb_y_size, point, @movie)
+	  point = NSPoint.new(x,y)
+#	  operation = THImageProcessor.alloc.initWithFrameCount_scale_width_height_point_movie(current_frame, @timescale, thumb_x_size, thumb_y_size, point, @movie)
 	  operation.main
     end
     ::Profiler__::stop_profile if PROFILE
@@ -121,16 +121,16 @@ class DesignerController
   	COLUMNS = 60
 	DEFAULT_X = 32
 	
-	def pickSource
-    panel = OSX::NSOpenPanel.openPanel
+	def pickSource(sender)
+    panel = NSOpenPanel.openPanel
     clicked = panel.runModalForDirectory_file_types(nil, nil, ['mov', 'm4v', 'mp4'])
-    if clicked == OSX::NSOKButton
+    if clicked == NSOKButton
       filename = panel.filenames.to_a.first
       @source_file.setStringValue filename
       out = filename.split('.')
       out[-1] = 'jpg'
       @output_file.setStringValue out.join('.')
-      @movie = OSX::QTMovie.movieWithFile_error(@source_file.stringValue, nil)
+      @movie = QTMovie.movieWithFile_error(@source_file.stringValue, nil)
       enableControls!
       populateSettings!
     end
@@ -145,7 +145,7 @@ class DesignerController
   def populateSettings!
     # Pull the first image
     @timescale = @movie.duration.timeScale
-    frame = @movie.frameImageAtTime(OSX::QTTime.new(0, @timescale, 0))
+    frame = @movie.frameImageAtTime(QTTime.new(0, @timescale, 0))
     @movie_x = frame.size.width
     @movie_y = frame.size.height
     @ratio = @movie_x / @movie_y
