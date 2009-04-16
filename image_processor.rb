@@ -7,21 +7,29 @@
 #
 
 class ImageProcessor
+  # movie, frame_number, time_scale, width, height, at
+  attr_accessor :options
   def initialize(options = {})
     @options = options
   end
 	
   def main
-#  	QTTime time = QTMakeTime([mFrameCount longLongValue], [mScale longValue]);
-#    NSError *err = [[NSError alloc] init];
-#    NSSize size;
-#    size.width = [mWidth floatValue];
-#    size.height = [mHeight floatValue];
-#    NSValue *value = [NSValue valueWithSize:size];
-#    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: value, @"QTMovieFrameImageSize", nil];
-#    NSRect rect;
-#    rect.size = size;
-#    NSImage *image = [mMovie frameImageAtTime:time withAttributes:attributes error:&err];
-#    [image drawAtPoint:mPoint fromRect:rect operation:NSCompositeSourceOver fraction:1.0];
+    puts "Processing: #{@options[:frame_number]}"
+    time = QTMakeTime(@options[:frame_number].longLongValue, @options[:time_scale].longValue)
+    size = NSSize.new
+    size.width = options[:width].floatValue
+    size.height = options[:height].floatValue
+    value = NSValue.valueWithSize(size)
+    attributes = {"QTMovieFrameImageSize" => value}
+    rect = NSRect.new
+    rect.size = size
+    image = @options[:movie].frameImageAtTime time #, :withAttributes => NSDictionary.dictionaryWithDictionary(attributes), :error => nil
+# We would rather run this than resize in a seperate operation,
+# but we get errors if we call using the withAttributes.
+#    image.drawAtPoint @options[:at], :fromRect => rect, :operation => NSCompositeSourceOver, :fraction => 1.0
+    rect.origin = @options[:at]
+    fromRect = NSRect.new
+    fromRect.size = image.size
+    image.drawInRect rect, :fromRect => fromRect, :operation => NSCompositeSourceOver, :fraction => 1.0
   end
 end

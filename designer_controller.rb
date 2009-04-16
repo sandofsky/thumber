@@ -113,8 +113,10 @@ class DesignerController
       x = column * thumb_x_size
       y = finalY - ((row + 1) * thumb_y_size)
       point = NSPoint.new(x,y)
+      operation = ImageProcessor.new(:movie => @movie, :frame_number => current_frame, :time_scale => time_scale,
+        :width => thumb_x_size, :height => thumb_y_size, :at => point)
 #     operation = THImageProcessor.alloc.initWithFrameCount_scale_width_height_point_movie(current_frame, @timescale, thumb_x_size, thumb_y_size, point, @movie)
-#     operation.main
+     operation.main
     end
     @output.unlockFocus
     @output.writeJPEG(@output_file.stringValue)
