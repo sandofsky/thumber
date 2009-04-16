@@ -123,14 +123,16 @@ class DesignerController
 	
 	def pickSource(sender)
     panel = NSOpenPanel.openPanel
-    clicked = panel.runModalForDirectory_file_types(nil, nil, ['mov', 'm4v', 'mp4'])
+    clicked = panel.runModalForDirectory nil, :file => nil, :types => ['mov', 'm4v', 'mp4']
     if clicked == NSOKButton
       filename = panel.filenames.to_a.first
       @source_file.setStringValue filename
       out = filename.split('.')
       out[-1] = 'jpg'
-      @output_file.setStringValue out.join('.')
-      @movie = QTMovie.movieWithFile_error(@source_file.stringValue, nil)
+      path = out.join('.')
+      puts "Opening #{path}"
+      @output_file.setStringValue path
+      @movie = QTMovie.movieWithFile path, :error => nil
       enableControls!
       populateSettings!
     end
@@ -138,19 +140,19 @@ class DesignerController
   
   def enableControls!
     [@thumb_size_control, @interval_control, @maintain_square_control,
-     @column_control, @output_file_button, @go_button].each {|c| c.setEnabled(true) }
+     @column_control, @output_file_button, @go_button].each {|c| c.setEnabled(true) if c}
     @go_button.highlight(true)
   end
   
   def populateSettings!
     # Pull the first image
-    @timescale = @movie.duration.timeScale
-    frame = @movie.frameImageAtTime(QTTime.new(0, @timescale, 0))
-    @movie_x = frame.size.width
-    @movie_y = frame.size.height
-    @ratio = @movie_x / @movie_y
-    @thumb_size_control.setIntValue(DEFAULT_X)
-    recalculateSettings
+#    @timescale = @movie.duration.timeScale
+#    frame = @movie.frameImageAtTime(QTTime.new(0, @timescale, 0))
+#    @movie_x = frame.size.width
+#    @movie_y = frame.size.height
+#    @ratio = @movie_x / @movie_y
+#    @thumb_size_control.setIntValue(DEFAULT_X)
+#    recalculateSettings
   end
   
   def timescale
