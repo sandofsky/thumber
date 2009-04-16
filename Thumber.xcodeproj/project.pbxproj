@@ -13,6 +13,8 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B528EC1B0F96AA0700DECE1E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B528EC190F96AA0700DECE1E /* MainMenu.xib */; };
+		B528EC240F96ABF000DECE1E /* designer_controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = B528EC230F96ABF000DECE1E /* designer_controller.rb */; };
+		B528EC570F96B02600DECE1E /* ns_image_monkey_patches.rb in Resources */ = {isa = PBXBuildFile; fileRef = B528EC560F96B02600DECE1E /* ns_image_monkey_patches.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Thumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B528EC1A0F96AA0700DECE1E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B528EC230F96ABF000DECE1E /* designer_controller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = designer_controller.rb; sourceTree = "<group>"; };
+		B528EC560F96B02600DECE1E /* ns_image_monkey_patches.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ns_image_monkey_patches.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B528EC230F96ABF000DECE1E /* designer_controller.rb */,
+				B528EC560F96B02600DECE1E /* ns_image_monkey_patches.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -162,6 +168,8 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */,
 				B528EC1B0F96AA0700DECE1E /* MainMenu.xib in Resources */,
+				B528EC240F96ABF000DECE1E /* designer_controller.rb in Resources */,
+				B528EC570F96B02600DECE1E /* ns_image_monkey_patches.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

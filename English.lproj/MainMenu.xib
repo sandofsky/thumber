@@ -795,6 +795,9 @@
 			<object class="NSCustomObject" id="586890814">
 				<string key="NSClassName">OutputImage</string>
 			</object>
+			<object class="NSCustomObject" id="184817745">
+				<string key="NSClassName">DesignerController</string>
+			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
@@ -1669,6 +1672,11 @@
 						<reference key="object" ref="19816314"/>
 						<reference key="parent" ref="103014212"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">470</int>
+						<reference key="object" ref="184817745"/>
+						<reference key="parent" ref="1049"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -1781,6 +1789,7 @@
 					<string>465.IBPluginDependency</string>
 					<string>466.IBPluginDependency</string>
 					<string>467.IBPluginDependency</string>
+					<string>470.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
 					<string>5.ImportedFromIB2</string>
 					<string>56.IBPluginDependency</string>
@@ -1911,6 +1920,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
@@ -1952,60 +1962,17 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">469</int>
+			<int key="maxID">470</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
-					<string key="className">OutputImage</string>
+					<string key="className">DesignerController</string>
 					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">recalculateSettings:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSMutableArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>column_control</string>
-							<string>finalXControl</string>
-							<string>finalYControl</string>
-							<string>go_button</string>
-							<string>interval_control</string>
-							<string>maintain_square_control</string>
-							<string>movie_view</string>
-							<string>output_file</string>
-							<string>output_file_button</string>
-							<string>progress</string>
-							<string>row_control</string>
-							<string>source_file</string>
-							<string>thumb_size_control</string>
-							<string>thumb_y_size_control</string>
-							<string>window</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
-						</object>
-					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">output_image.rb</string>
+						<string key="minorKey">designer_controller.rb</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -2033,7 +2000,7 @@
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../thumber.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../Thumber.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 	</data>
 </archive>

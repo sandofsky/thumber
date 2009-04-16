@@ -3,7 +3,7 @@
 //  Thumber
 //
 //  Created by Ben Sandofsky on 4/15/09.
-//  Copyright Yellowpages.com 2009. All rights reserved.
+//  Copyright Ben Sandofsky 2009. All rights reserved.
 //
 
 #import <MacRuby/MacRuby.h>
