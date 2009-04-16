@@ -913,14 +913,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">thumb_y_size_control</string>
-						<reference key="source" ref="651043136"/>
-						<reference key="destination" ref="261192471"/>
-					</object>
-					<int key="connectionID">476</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">maintain_square_control</string>
 						<reference key="source" ref="651043136"/>
 						<reference key="destination" ref="787410602"/>
@@ -985,14 +977,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">thumb_size_control</string>
-						<reference key="source" ref="651043136"/>
-						<reference key="destination" ref="261192471"/>
-					</object>
-					<int key="connectionID">490</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">column_control</string>
 						<reference key="source" ref="651043136"/>
 						<reference key="destination" ref="45240961"/>
@@ -1006,6 +990,54 @@
 						<reference key="destination" ref="475755838"/>
 					</object>
 					<int key="connectionID">492</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">fieldChanged:</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="261192471"/>
+					</object>
+					<int key="connectionID">493</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">thumb_size_control</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="261192471"/>
+					</object>
+					<int key="connectionID">494</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">thumb_y_size_control</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="153718319"/>
+					</object>
+					<int key="connectionID">495</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">fieldChanged:</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="787410602"/>
+					</object>
+					<int key="connectionID">496</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">fieldChanged:</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="45240961"/>
+					</object>
+					<int key="connectionID">497</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">fieldChanged:</string>
+						<reference key="source" ref="651043136"/>
+						<reference key="destination" ref="494973514"/>
+					</object>
+					<int key="connectionID">498</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1386,7 +1418,6 @@
 							<reference ref="494973514"/>
 							<reference ref="610133589"/>
 							<reference ref="877305942"/>
-							<reference ref="787410602"/>
 							<reference ref="444401306"/>
 							<reference ref="153718319"/>
 							<reference ref="473994476"/>
@@ -1395,6 +1426,7 @@
 							<reference ref="838626019"/>
 							<reference ref="103014212"/>
 							<reference ref="340716015"/>
+							<reference ref="787410602"/>
 						</object>
 						<reference key="parent" ref="414427165"/>
 					</object>
@@ -1802,9 +1834,9 @@
 					<reference ref="9"/>
 					<string>{74, 862}</string>
 					<string>{{741, 1370}, {266, 20}}</string>
-					<string>{{212, 900}, {390, 248}}</string>
+					<string>{{259, 774}, {390, 248}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{212, 900}, {390, 248}}</string>
+					<string>{{259, 774}, {390, 248}}</string>
 					<reference ref="9"/>
 					<string>{{1191, 909}, {634, 153}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1896,7 +1928,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">492</int>
+			<int key="maxID">498</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1908,10 +1940,10 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>fieldChanged:</string>
 							<string>pickDestination:</string>
 							<string>pickSource:</string>
 							<string>process:</string>
-							<string>recalculateSettings:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>

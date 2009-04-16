@@ -5,7 +5,7 @@
 #  Created by Ben Sandofsky on 4/15/09.
 #  Copyright (c) 2009 Ben Sandofsy. All rights reserved.
 #
-
+framework 'QTKit' 
 class DesignerController
 	attr_accessor :source_file
 	attr_accessor :output_file
@@ -23,7 +23,12 @@ class DesignerController
 	attr_accessor :finalXControl
 	attr_accessor :finalYControl
 	
-	def recalculateSettings(sender)
+  
+  def fieldChanged(sender)
+    recalculateSettings!
+  end
+  
+	def recalculateSettings!
     # Width Control
 		update_y_control_size!
 		
@@ -37,10 +42,10 @@ class DesignerController
 		@finalYControl.setIntValue(thumb_y_size * rows)
 		
 		thumb_size = @thumb_size_control.floatValue.to_i
-			maintain_square = true # TODO: pull from UI
-			if maintain_square
-			  thumb_y_size = thumb_x_size = thumb_size
-		  else
+    maintain_square = true # TODO: pull from UI
+		if maintain_square
+		  thumb_y_size = thumb_x_size = thumb_size
+		else
 			# calculate y 
 		end
 	end
@@ -129,10 +134,10 @@ class DesignerController
       @source_file.setStringValue filename
       out = filename.split('.')
       out[-1] = 'jpg'
-      path = out.join('.')
-      puts "Opening #{path}"
-      @output_file.setStringValue path
-      @movie = QTMovie.movieWithFile path, :error => nil
+      output_path = out.join('.')
+      raise "File does not exist: #{filename}" unless File.exist?(filename)
+      @output_file.setStringValue output_path
+      @movie = QTMovie.movieWithFile filename, :error => nil
       enableControls!
       populateSettings!
     end
@@ -145,14 +150,19 @@ class DesignerController
   end
   
   def populateSettings!
+    puts @movie.inspect
+    duration = @movie.duration
+    puts duration.inspect
+    timeScale = duration.timeScale
+    puts timeScale.inspect
     # Pull the first image
-#    @timescale = @movie.duration.timeScale
-#    frame = @movie.frameImageAtTime(QTTime.new(0, @timescale, 0))
-#    @movie_x = frame.size.width
-#    @movie_y = frame.size.height
-#    @ratio = @movie_x / @movie_y
-#    @thumb_size_control.setIntValue(DEFAULT_X)
-#    recalculateSettings
+    time = QTTime.new(0, timeScale.to_i, 0)
+    frame = @movie.frameImageAtTime(time)
+    @movie_x = frame.size.width
+    @movie_y = frame.size.height
+    @ratio = @movie_x / @movie_y
+    @thumb_size_control.setIntValue(DEFAULT_X)
+    recalculateSettings!
   end
   
   def timescale
